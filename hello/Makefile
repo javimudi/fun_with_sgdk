@@ -1,7 +1,7 @@
 .PHONY = build cli
 
 build:
-	docker run -it --rm -v ${PWD}:/usr/src/ maciekbaron/sgdk:latest /usr/src/build.sh
+	docker run -w /usr/src -it --rm -v ${PWD}:/usr/src/ maciekbaron/sgdk:latest /usr/src/build.sh
 
 cli:
-	docker run -it --rm -v ${PWD}:/usr/src/ maciekbaron/sgdk:latest sh
+	docker run -w /usr/src -it --rm -v ${PWD}:/usr/src/ maciekbaron/sgdk:latest sh
